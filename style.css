@@ -37,11 +37,11 @@ body {
 }
 
 .menu-toggle {
-    z-index: 2;
     display: none;
     flex-direction: column;
     height: 22px;
-    justify-content: space-around;
+    justify-content: space-between;
+    position: relative;
 }
 
 .menu-toggle input {
@@ -70,6 +70,7 @@ body {
 }
 
 .menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
     transform: rotate(40deg) translate(2px, -1px);
 }
 
@@ -79,20 +80,18 @@ body {
 }
 
 .menu-toggle input:checked ~ span:last-child {
-    transform: rotate(-40deg) translate(-2px, 3px);
+    background-color: white;
+    transform: rotate(-40deg) translate(4px, 1px);
 }
 
-@media (max-width: 600px) {
-    .container {
-        justify-content: space-around;
-    }
-
-    .container ul li a{
-        display: none
-    };
-
+@media screen and (max-width: 576px) {
     .menu-toggle {
         display: flex;
     }
+
+    .container > ul > li > a{
+        display: none
+    };
+
 
 }
